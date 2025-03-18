@@ -6,11 +6,13 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 09:12:21 by ccolin            #+#    #+#             */
-/*   Updated: 2025/03/18 15:10:22 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/03/18 16:01:13 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include <iomanip>
+#include <stdlib.h>
 #include <iomanip>
 
 void Phonebook::add(int *i)
@@ -66,7 +68,7 @@ void Phonebook::print_index(void)
     std::cout << std::endl;
 }
 
-void    Phonebook::search(void)
+void Phonebook::search(void)
 {
     int choice;
 
@@ -74,11 +76,13 @@ void    Phonebook::search(void)
     {
         Phonebook::print_index();
         std::cout << "Choose a contact" << std::endl << std::endl << "> ";
-        std::cin >> choice;
+
+        if (!(std::cin >> choice))
+                exit(0);
         if (choice >= 0 && choice <= 7)
         {
             contacts[choice].print_informations();
-            break ;
+            break;
         }
     }
 }

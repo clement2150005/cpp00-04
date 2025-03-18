@@ -6,11 +6,12 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:00:38 by ccolin            #+#    #+#             */
-/*   Updated: 2025/03/18 14:58:39 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/03/18 15:57:53 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include <stdlib.h>
 
 int main(void)
 {
@@ -25,7 +26,8 @@ int main(void)
         std::cout << "Add contact: ADD" << std::endl;
         std::cout << "Exit: EXIT" << std::endl;
         std::cout << std::endl << "> ";
-        getline(std::cin, choice);
+        if (!getline(std::cin, choice))
+            exit(0);
         if (choice == "ADD")
             phonebook.add(&i);
         else if (choice == "SEARCH")
@@ -33,7 +35,4 @@ int main(void)
         else
         std::cout << "\033[2J\033[H";
     }
-    // for (int i = 0; i < 8; i++)
-    //     phonebook.add(i);
-    // phonebook.search();
 }
