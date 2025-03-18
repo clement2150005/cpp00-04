@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 11:01:16 by ccolin            #+#    #+#             */
-/*   Updated: 2025/03/18 11:55:24 by ccolin           ###   ########.fr       */
+/*   Created: 2025/03/18 13:00:38 by ccolin            #+#    #+#             */
+/*   Updated: 2025/03/18 13:02:14 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>	
-#include <cctype> 
+#include "contact.hpp"
 
-int	main(int argc, char **argv)
+int main(void)
 {
-	int	i = 1;
-	int	j = 0;
+    contact contact_1;
 
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		{
-			while (argv[i])
-			{
-				while (argv[i][j])
-				{
-					std::cout << static_cast<char>(std::toupper(argv[i][j]));
-					j++;
-				}
-				j = 0;
-				i++;
-			}
-		}
-	std::cout << std::endl;
-	return (0);
+    contact_1.get_informations();
+    contact_1.print_informations();
 }
