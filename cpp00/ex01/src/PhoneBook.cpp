@@ -6,16 +6,16 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 09:12:21 by ccolin            #+#    #+#             */
-/*   Updated: 2025/03/18 16:01:13 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/03/27 11:52:53 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <iomanip>
 #include <stdlib.h>
 #include <iomanip>
 
-void Phonebook::add(int *i)
+void PhoneBook::add(int *i)
 {
     contacts[*i].get_informations();
     (*i)++;
@@ -24,7 +24,7 @@ void Phonebook::add(int *i)
     return ;
 }
 
-void Phonebook::print_index(void)
+void PhoneBook::print_index(void)
 {
     std::cout << "\033[2J\033[H";
     std::cout << " ";
@@ -68,13 +68,13 @@ void Phonebook::print_index(void)
     std::cout << std::endl;
 }
 
-void Phonebook::search(void)
+void PhoneBook::search(void)
 {
     int choice;
 
     while (1)
     {
-        Phonebook::print_index();
+        PhoneBook::print_index();
         std::cout << "Choose a contact" << std::endl << std::endl << "> ";
 
         if (!(std::cin >> choice))

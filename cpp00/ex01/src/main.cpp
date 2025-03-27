@@ -6,16 +6,16 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:00:38 by ccolin            #+#    #+#             */
-/*   Updated: 2025/03/18 15:57:53 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/03/27 11:54:18 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 #include <stdlib.h>
 
 int main(void)
 {
-    Phonebook   phonebook;
+    PhoneBook   phonebook;
     std::string choice;
     int         i = 0;
 
