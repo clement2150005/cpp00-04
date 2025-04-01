@@ -1,8 +1,9 @@
-NAME        =   megaphone
+NAME        =   Unnecessary\ violence
 SRC_DIR     =   src
 OBJ_DIR     =   obj
+INCLUDE_DIR =   include
 CXX         =   c++
-CXXFLAGS    =   -Wall -Werror -Wextra -std=c++98
+CXXFLAGS    =   -Wall -Werror -Wextra -std=c++98 -I$(INCLUDE_DIR)
 RM          =   rm -rf
 
 SRCS        =   $(shell find $(SRC_DIR) -name '*.cpp')
