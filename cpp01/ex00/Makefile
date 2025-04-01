@@ -1,4 +1,4 @@
-NAME        =   PhoneBook
+NAME        =   BraiiiiiiinnnzzzZ
 SRC_DIR     =   src
 OBJ_DIR     =   obj
 INCLUDE_DIR =   include

@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:25:11 by ccolin            #+#    #+#             */
-/*   Updated: 2025/03/27 12:30:55 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/01 10:31:31 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 class Zombie
 {
-private:
-	std::string name;
+	private:
+		std::string name;
 
-public:
-	void	announce(void);
+	public:
+		Zombie(std::string name);
+		~Zombie(void);
+		void	announce(void);
 };

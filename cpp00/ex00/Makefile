@@ -1,4 +1,4 @@
-NAME        =   megaphone
+NAME        =   Megaphone
 SRC_DIR     =   src
 OBJ_DIR     =   obj
 CXX         =   c++

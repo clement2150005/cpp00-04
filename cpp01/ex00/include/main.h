@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 09:03:59 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/01 09:39:36 by ccolin           ###   ########.fr       */
+/*   Created: 2025/04/01 09:32:43 by ccolin            #+#    #+#             */
+/*   Updated: 2025/04/01 10:20:37 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef MAIN_H
+#define MAIN_H
 
-Zombie	*newZombie(std::string name)
-{
-	return (new Zombie(name));
-}
+#include "Zombie.hpp"
+#include <stdlib.h>
+#include <unistd.h>
+
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
+
+#endif
