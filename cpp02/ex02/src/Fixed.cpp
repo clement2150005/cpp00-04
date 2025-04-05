@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 11:26:19 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/05 15:11:25 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/05 16:24:13 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,26 +132,26 @@ Fixed Fixed::operator/(const Fixed &other) const
 Fixed   Fixed::operator++(int)
 {
     Fixed temp(*this);
-    this->_value += (1 << _fractionalBits);
+    this->_value += 1;
     return (temp);
 }
 
 Fixed&  Fixed::operator++()
 {
-    this->_value += (1 << _fractionalBits);
+    this->_value += 1;
     return (*this);
 }
 
 Fixed   Fixed::operator--(int)
 {
     Fixed temp(*this);
-    this->_value -= (1 << _fractionalBits);
+    this->_value -= 1;
     return (temp);
 }
 
 Fixed&  Fixed::operator--()
 {
-    this->_value -= (1 << _fractionalBits);
+    this->_value -= 1;
     return (*this);
 }
 
@@ -159,4 +159,32 @@ std::ostream    &operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
     return (out);
+}
+
+const Fixed&    Fixed::min(const Fixed &a, const Fixed &b)
+{
+    if (a.getRawBits() < b.getRawBits())
+        return (a);
+    return (b);
+}
+
+Fixed&  Fixed::min(Fixed &a, Fixed &b)
+{
+    if (a.getRawBits() < b.getRawBits())
+        return (a);
+    return (b);
+}
+
+const Fixed&    Fixed::max(const Fixed &a, const Fixed &b)
+{
+    if (a.getRawBits() > b.getRawBits())
+        return (a);
+    return (b);
+}
+
+Fixed&  Fixed::max(Fixed &a, Fixed &b)
+{
+    if (a.getRawBits() > b.getRawBits())
+        return (a);
+    return (b);
 }
