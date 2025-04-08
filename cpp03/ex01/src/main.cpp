@@ -6,33 +6,37 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 14:16:48 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/08 14:14:13 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/08 15:14:09 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap a("1");
-	ClapTrap b("2");
+	std::cout << "\n--- ScavTrap Constructor Tests ---\n";
+	ScavTrap s1("1");
+	ScavTrap s2("2");
+	ScavTrap s3(s1); // copy constructor
+	s3 = s2;         // assignment operator
 
-	a.attack("2");
-	b.takeDamage(0); // simulate 1's attack
+	std::cout << "\n--- Action Tests ---\n";
+	s1.attack("2");
+	s2.takeDamage(20);
+	s2.beRepaired(10);
+	s2.guardGate();
 
-	b.attack("1");
-	a.takeDamage(0); // simulate 2's attack
+	std::cout << "\n--- Exhaust Energy ---\n";
+	for (int i = 0; i < 51; i++)
+		s1.attack("2");
 
-	a.beRepaired(5);
-	b.beRepaired(3);
+	std::cout << "\n--- Kill and Try Actions ---\n";
+	s2.takeDamage(999); // dead
+	s2.attack("1");     // should fail
+	s2.beRepaired(10);  // should fail
+	s2.takeDamage(5);   // should print already dead
 
-	for (int i = 0; i < 11; i++)
-		a.attack("2");
-
-	b.takeDamage(100); // kill 2
-	b.attack("1"); // should fail
-	b.beRepaired(10);  // should fail
-	b.takeDamage(5);   // should print "is already dead"
-
+	std::cout << "\n--- Destructors ---\n";
 	return 0;
 }

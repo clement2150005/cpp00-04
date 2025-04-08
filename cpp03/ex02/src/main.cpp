@@ -6,33 +6,37 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 14:16:48 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/08 14:14:13 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/08 15:49:46 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap a("1");
-	ClapTrap b("2");
+	std::cout << "\n--- FragTrap Constructor Tests ---\n";
+	FragTrap f1("1");
+	FragTrap f2("2");
+	FragTrap f3(f1); // copy constructor
+	f3 = f2;         // assignment operator
 
-	a.attack("2");
-	b.takeDamage(0); // simulate 1's attack
+	std::cout << "\n--- Action Tests ---\n";
+	f1.attack("2");
+	f2.takeDamage(30);
+	f2.beRepaired(20);
+	f2.highFivesGuys();
 
-	b.attack("1");
-	a.takeDamage(0); // simulate 2's attack
+	std::cout << "\n--- Exhaust Energy ---\n";
+	for (int i = 0; i < 101; i++)
+		f1.attack("2");
 
-	a.beRepaired(5);
-	b.beRepaired(3);
+	std::cout << "\n--- Kill and Try Actions ---\n";
+	f2.takeDamage(999);
+	f2.attack("1");    // should fail
+	f2.beRepaired(10); // should fail
+	f2.takeDamage(5);  // already dead
 
-	for (int i = 0; i < 11; i++)
-		a.attack("2");
-
-	b.takeDamage(100); // kill 2
-	b.attack("1"); // should fail
-	b.beRepaired(10);  // should fail
-	b.takeDamage(5);   // should print "is already dead"
-
+	std::cout << "\n--- Destructors ---\n";
 	return 0;
 }

@@ -6,16 +6,18 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 14:16:42 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/08 14:03:26 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/08 14:54:10 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class ClapTrap
 {
-private:
+protected:
     std::string name;
+	std::string type;
     int         hitPoints;
     int         energyPoints;
     int         attackDamage;
