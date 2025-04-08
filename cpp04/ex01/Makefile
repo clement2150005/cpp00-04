@@ -1,9 +1,9 @@
-NAME        =   Repetitive\ work
+NAME        =    I\ don’t\ want\ to\ set\ the\ world\ on\ fire
 SRC_DIR     =   src
 OBJ_DIR     =   obj
 INCLUDE_DIR =   include
 CXX         =   c++
-CXXFLAGS    =   -Wall -Werror -Wextra -std=c++98 -I$(INCLUDE_DIR)
+CXXFLAGS    =   -Wall -Wextra -Werror -std=c++98 -I$(INCLUDE_DIR)
 RM          =   rm -rf
 
 SRCS        =   $(shell find $(SRC_DIR) -name '*.cpp')

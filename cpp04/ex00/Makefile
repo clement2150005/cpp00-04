@@ -1,4 +1,4 @@
-NAME        =   Repetitive\ work
+NAME        =   Polymorphism
 SRC_DIR     =   src
 OBJ_DIR     =   obj
 INCLUDE_DIR =   include
