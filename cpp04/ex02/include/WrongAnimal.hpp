@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 18:04:28 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/09 10:27:06 by ccolin           ###   ########.fr       */
+/*   Created: 2025/04/08 15:59:51 by ccolin            #+#    #+#             */
+/*   Updated: 2025/04/08 17:19:27 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
-class Brain
+class WrongAnimal
 {
-private:
-	std::string ideas[100];
-
+protected:
+	std::string type;
+	
 public:
-	Brain();
-	Brain(const Brain &other);
-	Brain &operator=(const Brain &other);
-	virtual ~Brain();
-
-	std::string*	getIdeas(void);
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &other);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	~WrongAnimal();
+	
+	void	makeSound() const;
+	std::string		getType() const;
 };

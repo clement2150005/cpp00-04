@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat copy.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 18:04:28 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/09 10:27:06 by ccolin           ###   ########.fr       */
+/*   Created: 2025/04/08 15:59:51 by ccolin            #+#    #+#             */
+/*   Updated: 2025/04/08 17:34:00 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-class Brain
+class WrongCat : public WrongAnimal
 {
-private:
-	std::string ideas[100];
 
 public:
-	Brain();
-	Brain(const Brain &other);
-	Brain &operator=(const Brain &other);
-	virtual ~Brain();
-
-	std::string*	getIdeas(void);
+	WrongCat();
+	WrongCat(const WrongCat &other);
+	WrongCat &operator=(const WrongCat &other);
+	~WrongCat();
+	
+	void			makeSound() const;
+	std::string		getType() const;
 };
