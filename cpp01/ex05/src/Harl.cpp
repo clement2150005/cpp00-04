@@ -6,11 +6,12 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:13:05 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/04 10:41:47 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/12 15:19:53 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+#include <iostream>
 
 void	Harl::debug(void)
 {
@@ -48,4 +49,5 @@ void	Harl::complain(std::string level)
 			return ((this->*fptr[i])());
 		}
 	}
+	std::cout << "Complain not found" << std::endl;
 }
