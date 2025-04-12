@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 10:10:01 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/12 13:14:47 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/04/12 15:35:15 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int main(void)
     try
     {
         Bureaucrat markScout("Mark Scout", 1);
-        std::cout << markScout;
-        markScout.incrementGrade();
+        while (1)
+        {
+            std::cout << markScout;
+            markScout.decrementGrade();
+        }
     } catch (const std::exception &e)
     {
         std::cout << "Caught: " << e.what() << std::endl;
