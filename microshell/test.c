@@ -27,7 +27,7 @@ int	exec_cd(char **argv, int i)
 	return (0);
 }
 
-int main(int argc, char **argv, char **envp)
+int main(int argc, char **argv, char ** envp)
 {
 	int i = 0;
 	int ret = 0;
@@ -36,10 +36,11 @@ int main(int argc, char **argv, char **envp)
 
 	tmp = dup(0);
 	if (tmp == -1)
-		return (ft_error("error: fatal\n"));
+		return (ft_error("error:fatal\n"));
 	while (argv[i] && argv[++i])
 	{
 		argv = argv + i;
+		i = 0;
 		while (argv[i] && strcmp(argv[i], ";") && strcmp(argv[i], "|"))
 			i++;
 		if (!strcmp(*argv, "cd"))
