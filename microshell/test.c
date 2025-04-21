@@ -1,23 +1,26 @@
+
 int tmp;
 
 int ft_strlen(char *s)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
 
-int	ft_error(char *s)
+int ft_error(char *s)
 {
-	write(2, s, ft_strlen(s));
+	write (2, s, ft_strlen(s));
 	return (1);
 }
 
 int	exec_cd(char **argv, int i)
 {
 	if (i != 2)
-		return (ft_error("error: cd: bad arguments\n"));
+		return ("error: cd: bad arguments\n");
 	if (chdir(argv[1]) == -1)
 	{
 		ft_error("error: cd: cannot change dir to ");
@@ -27,16 +30,34 @@ int	exec_cd(char **argv, int i)
 	return (0);
 }
 
-int main(int argc, char **argv, char ** envp)
+int	exec_cmd(char *argv, int i, char *envp)
 {
-	int i = 0;
-	int ret = 0;
+	int fd[2];
+	int ret;
+	int pid;
+	int has_pipe = (argv[i] && !strcmp(argv[i], "|"));
 
+	if (has_pipe && pipe(fd) == -1)
+		return (ft_error("error: fatal\n"));
+	pid = fork();
+	if (pid == -1)
+		return (ft_error("error: fatal\n"));
+	if (pid == 0)
+		exit(exec_child(argv, i, envp, has_pipe ? fd : NULL))
+	}
+
+int main(int argc, char **argv, char **envp)
+{
 	(void)argc;
 
+	int ret;
+	int i;
+
+	ret = 0;
+	i = 0;
 	tmp = dup(0);
-	if (tmp == -1)
-		return (ft_error("error:fatal\n"));
+	if (tmp = -1)
+		return (ft_error("error: fatal\n"));
 	while (argv[i] && argv[++i])
 	{
 		argv = argv + i;
