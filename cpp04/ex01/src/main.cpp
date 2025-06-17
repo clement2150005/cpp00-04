@@ -6,7 +6,7 @@
 /*   By: ccolin <ccolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 15:58:58 by ccolin            #+#    #+#             */
-/*   Updated: 2025/04/09 10:37:45 by ccolin           ###   ########.fr       */
+/*   Updated: 2025/06/18 08:19:25 by ccolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 int main()
 {
-	const Animal* catsAndDogs[100];
+	const Animal* catsAndDogs[10];
 	
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 5; i++)
 		catsAndDogs[i] = new Cat();
-	for (int i = 50; i < 100; i++)
+	for (int i = 5; i < 10; i++)
 		catsAndDogs[i] = new Dog();
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 10; i++)
 		delete catsAndDogs[i];
 
 	Animal* strayCat = new Cat();
